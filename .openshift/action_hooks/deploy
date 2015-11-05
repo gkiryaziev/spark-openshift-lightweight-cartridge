@@ -1,0 +1,15 @@
+#!/bin/bash
+# This deploy hook gets executed after dependencies are resolved and the
+# build hook has been run but before the application has been started back
+# up again.  This script gets executed directly, so it could be python, php,
+# ruby, etc.
+set -x
+
+
+if [ ! -d $OPENSHIFT_DATA_DIR/jdk1.8.0_66 ]
+	then 
+		cd $OPENSHIFT_DATA_DIR
+		wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
+		tar xvf *.tar.gz 
+		rm -f *.tar.gz
+fi
