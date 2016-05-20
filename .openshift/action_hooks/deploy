@@ -6,10 +6,10 @@
 set -x
 
 
-if [ ! -d $OPENSHIFT_DATA_DIR/jdk1.8.0_66 ]
+if [ ! -d $OPENSHIFT_DATA_DIR/jdk1.8.0_92 ]
 	then 
 		cd $OPENSHIFT_DATA_DIR
-		wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
+		wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-x64.tar.gz
 		tar xvf *.tar.gz 
 		rm -f *.tar.gz
 fi
